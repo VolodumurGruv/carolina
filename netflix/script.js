@@ -1,28 +1,3 @@
-// $(function () {
-// 	var tabs = $("#features > nav a");
-// 	var tabsContent = $(" article > section");
-
-// 	tabs.click(function (e) {
-// e.preventDefault();
-// e.stopPropagation();
-
-// 		var that = $(this);
-
-// 		tabs.removeClass("is-selected");
-// 		that.addClass("is-selected");
-// 		tabsContent.removeClass("is-selected");
-
-// 		console.log(tabsContent);
-
-// 		tabsContent
-// 			.filter((i, tab) => {
-// 				console.log($(this).attr("id"));
-// 				return $(tab).data("id") === $(this).attr("id");
-// 			})
-// 			.addClass("is-selected");
-// 	});
-// });
-
 const tabsContentMine = document.querySelectorAll(
 	"#features > article > section"
 );
@@ -31,11 +6,11 @@ const sections = document.querySelectorAll("article > section");
 
 const links = document.querySelectorAll(".center a");
 
-let sectionAttr = [];
-
-for (let section of sections) {
-	section.style.display = "none";
-}
+// for (let section of sections) {
+// 	section.style.display = "none";
+// }
+// sections[0].style.display = "block";
+// links[0].classList.add("is-selected");
 
 for (let link of links) {
 	console.log(link.getAttribute("id"));
@@ -45,10 +20,28 @@ for (let link of links) {
 		for (let section of sections) {
 			if (section.getAttribute("data-id") === link.getAttribute("id")) {
 				section.style.display = "block";
-				link.classList.add("is-selected");
+				event.target.classList.add("is-selected");
 			} else {
 				section.style.display = "none";
 			}
 		}
 	});
 }
+// $(function () {
+// 	var tabs = $("#features > nav a");
+// 	var tabsContent = $("#features > article > section");
+
+// 	tabs.click(function (e) {
+// 		e.preventDefault();
+
+// 		var that = $(this);
+
+// 		tabs.removeClass("is-selected");
+// 		that.addClass("is-selected");
+// 		tabsContent.removeClass("is-selected");
+
+// 		tabsContent
+// 			.filter((i, tab) => $(tab).data("id") === that.data("id"))
+// 			.addClass("is-selected");
+// 	});
+// });
