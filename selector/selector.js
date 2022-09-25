@@ -1,5 +1,4 @@
-const options = ["All departments", "Alexa Skills", "Amazon video", "etc..."];
-const values = ["aps", "alexa-skills", "video-instance", "etc"];
+
 
 const valueOption = {
 	aps: "All departments",
@@ -15,6 +14,9 @@ Object.entries(valueOption).forEach((op) => {
 	option.value = op[0];
 	select.appendChild(option);
 });
+
+// const options = ["All departments", "Alexa Skills", "Amazon video", "etc..."];
+// const values = ["aps", "alexa-skills", "video-instance", "etc"];
 
 // options.forEach((op, i) => {
 // 	const option = document.createElement("option");
